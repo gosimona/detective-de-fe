@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Detective de Fe™ — Construye una fe que dure toda la vida</title>
+
+<!-- ═══════════════════════════════════════
+     META PIXEL — Reemplazar XXXXXXXXXXXX
+═══════════════════════════════════════ -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'XXXXXXXXXXXX'); /* ← REEMPLAZAR CON TU PIXEL ID */
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=XXXXXXXXXXXX&ev=PageView&noscript=1"/></noscript>
+<!-- FIN META PIXEL -->
+
+<!-- ═══════════════════════════════════════
+     GOOGLE TAG — Reemplazar GTM-XXXXXXX
+═══════════════════════════════════════ -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=GTM-XXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'GTM-XXXXXXX'); /* ← REEMPLAZAR CON TU GTAG ID */
+</script>
+<!-- FIN GOOGLE TAG -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0A1628;--navy-mid:#112040;--gold:#C8992A;--gold-l:#E8B84B;
+  --gold-pale:#F5E6C0;--cream:#FAF6EE;--cream-d:#F0E9D8;
+  --white:#fff;--text:#1A1A2E;--text-mid:#3D3D5C;--text-soft:#6B6B8A;
+  --green-d:#0E3D22;--green:#1A6038;--red-d:#3D0A0A;--red:#7A1515;
+  --shadow:0 8px 40px rgba(10,22,40,.18);
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;line-height:1.7;font-size:16px}
+
+/* ── ANIMATIONS ── */
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(200,153,42,.5)}50%{box-shadow:0 0 0 18px rgba(200,153,42,0)}}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(9px)}}
+@keyframes rotateSlow{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes shimmer{0%{background-position:-400px 0}100%{background-position:400px 0}}
+@keyframes heartbeat{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.on{opacity:1;transform:translateY(0)}
+
+/* ── LAYOUT ── */
+.wrap{max-width:480px;margin:0 auto;padding:0 18px}
+.wrap-wide{max-width:680px;margin:0 auto;padding:0 18px}
+.sec{padding:56px 0}
+
+/* ── STICKY BAR ── */
+.sticky{
+  position:fixed;bottom:0;left:0;right:0;
+  background:var(--navy);border-top:2px solid var(--gold);
+  padding:10px 16px;display:flex;align-items:center;
+  justify-content:space-between;gap:10px;z-index:999;
+  transform:translateY(100%);transition:transform .4s ease;
+}
+.sticky.show{transform:translateY(0)}
+.sticky-txt{color:#fff;font-size:13px;font-weight:500;line-height:1.3}
+.sticky-txt strong{color:var(--gold-l);display:block;font-size:15px}
+.sticky-btn{
+  background:var(--gold);color:var(--navy);border:none;cursor:pointer;
+  padding:11px 18px;border-radius:8px;font-family:inherit;
+  font-size:13px;font-weight:700;white-space:nowrap;text-decoration:none;
+  flex-shrink:0;
+}
+
+/* ── HERO ── */
+.hero{
+  min-height:100svh;position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;padding:72px 18px 100px;
+}
+.hero-bg{position:absolute;inset:0;background-image:url('hero-principal.webp');background-size:cover;background-position:center 20%}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,12,24,.78) 0%,rgba(6,12,24,.62) 45%,rgba(6,12,24,.88) 100%)}
+.hero-c{position:relative;z-index:2;max-width:440px;margin:0 auto}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:7px;
+  border:1px solid rgba(200,153,42,.55);color:var(--gold-l);
+  padding:6px 16px;border-radius:999px;font-size:12px;
+  font-weight:700;letter-spacing:.07em;margin-bottom:24px;
+  background:rgba(200,153,42,.09);
+}
+.hero h1{
+  font-family:'Playfair Display',serif;font-size:clamp(30px,7vw,48px);
+  font-weight:900;color:#fff;line-height:1.18;margin-bottom:20px;
+  text-shadow:0 2px 16px rgba(0,0,0,.45);
+}
+.hero h1 em{font-style:italic;color:var(--gold-l)}
+.hero-sub{font-size:clamp(15px,4vw,18px);color:rgba(255,255,255,.88);margin-bottom:10px;line-height:1.65;text-shadow:0 1px 6px rgba(0,0,0,.5)}
+.hero-sub2{font-size:14px;color:rgba(255,255,255,.45);font-style:italic;margin-bottom:36px}
+.hero-divider{width:50px;height:2px;background:var(--gold);margin:0 auto 32px}
+.hero-arrow{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);color:var(--gold);font-size:24px;animation:floatY 2s ease-in-out infinite;opacity:.8}
+
+/* ── CTA BUTTON ── */
+.cta{
+  display:block;width:100%;max-width:400px;margin:0 auto;
+  background:var(--gold);color:var(--navy);
+  font-family:inherit;font-size:16px;font-weight:700;
+  padding:18px 24px;border-radius:12px;text-align:center;
+  text-decoration:none;border:none;cursor:pointer;
+  animation:pulse 3s ease-in-out infinite;
+  transition:background .2s,transform .15s;line-height:1.3;
+}
+.cta:hover{background:var(--gold-l);transform:translateY(-2px)}
+.cta.no-pulse{animation:none}
+.trust{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:16px}
+.trust span{display:flex;align-items:center;gap:5px;color:rgba(255,255,255,.45);font-size:12px}
+
+/* ── STORY ── */
+.story{background:var(--cream)}
+.story p{font-size:17px;line-height:1.95;color:var(--text-mid);margin-bottom:18px}
+.story-q{background:var(--cream-d);border-left:4px solid var(--gold);padding:22px 24px;border-radius:0 12px 12px 0;margin:28px 0}
+.story-q p{font-family:'Playfair Display',serif;font-size:clamp(18px,5vw,24px);color:var(--navy);font-style:italic;margin:0;line-height:1.5}
+.punch{font-family:'Playfair Display',serif;font-size:clamp(20px,5.5vw,28px);font-weight:700;color:var(--navy);text-align:center;margin:32px 0;line-height:1.4}
+.punch em{font-style:italic;color:var(--gold)}
+
+/* ── PROBLEM ── */
+.problem{background:var(--navy);color:#fff}
+.problem h2{font-family:'Playfair Display',serif;font-size:clamp(24px,6vw,38px);font-weight:800;text-align:center;margin-bottom:14px;line-height:1.25}
+.problem h2 em{font-style:italic;color:var(--gold-l)}
+.prob-intro{text-align:center;color:rgba(255,255,255,.6);font-size:16px;margin-bottom:32px}
+.prob-img{border-radius:14px;overflow:hidden;margin-bottom:32px;box-shadow:0 16px 48px rgba(0,0,0,.45)}
+.prob-img img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}
+.stat-box{background:#1A2E50;border-left:4px solid var(--gold);border-radius:0 12px 12px 0;padding:22px 24px;margin-bottom:28px}
+.stat-num{font-family:'Playfair Display',serif;font-size:48px;font-weight:900;color:var(--gold-l);line-height:1;margin-bottom:4px}
+.stat-txt{color:rgba(255,255,255,.8);font-size:16px}
+.prob-list{list-style:none;margin-bottom:32px}
+.prob-list li{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.07);color:rgba(255,255,255,.8);font-size:16px;line-height:1.6}
+.prob-list li::before{content:'⚡';color:var(--gold);font-size:17px;flex-shrink:0;margin-top:2px}
+.prob-close{font-family:'Playfair Display',serif;font-size:clamp(18px,5vw,26px);font-weight:700;color:var(--gold-l);text-align:center;margin-top:32px;font-style:italic}
+
+/* ── SOLUTION ── */
+.solution{background:var(--cream)}
+.solution h2{font-family:'Playfair Display',serif;font-size:clamp(22px,5.5vw,36px);font-weight:800;color:var(--navy);text-align:center;margin-bottom:32px;line-height:1.3}
+.sol-quote{background:var(--navy);border-radius:14px;padding:28px 24px;text-align:center;margin:0 0 32px}
+.sol-quote p{font-family:'Playfair Display',serif;font-size:clamp(16px,4.5vw,20px);font-style:italic;line-height:1.5}
+.sol-quote p:first-child{color:var(--gold-pale);margin-bottom:10px}
+.sol-quote p:last-child{color:var(--gold-l);font-weight:700}
+.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:28px}
+.feat-card{background:#fff;border-radius:12px;padding:18px 16px;box-shadow:0 4px 20px rgba(10,22,40,.1)}
+.feat-icon{font-size:26px;margin-bottom:10px}
+.feat-title{font-weight:700;color:var(--navy);font-size:14px;margin-bottom:6px}
+.feat-txt{color:var(--text-soft);font-size:13px;line-height:1.55}
+.pills{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.pill{background:var(--gold-pale);color:var(--navy);font-weight:600;font-size:14px;padding:9px 18px;border-radius:999px;border:1px solid rgba(200,153,42,.3)}
+
+/* ── ICP ── */
+.icp{background:var(--cream-d)}
+.icp h2{font-family:'Playfair Display',serif;font-size:clamp(22px,5.5vw,34px);font-weight:800;color:var(--navy);text-align:center;margin-bottom:32px}
+.icp-img{border-radius:16px;overflow:hidden;margin-bottom:28px;box-shadow:0 12px 40px rgba(10,22,40,.18)}
+.icp-img img{width:100%;display:block;max-height:320px;object-fit:cover;object-position:center top}
+.icp-list{list-style:none;margin-bottom:28px}
+.icp-list li{display:flex;gap:12px;align-items:flex-start;padding:13px 0;border-bottom:1px solid rgba(10,22,40,.08);font-size:16px;color:var(--text-mid);line-height:1.55}
+.icp-list li::before{content:'👉';font-size:17px;flex-shrink:0;margin-top:2px}
+.icp-close{background:var(--navy);border:2px solid var(--gold);border-radius:14px;padding:24px 22px;text-align:center}
+.icp-close p{font-family:'Playfair Display',serif;font-size:clamp(16px,4.5vw,20px);font-style:italic;color:#fff;line-height:1.5}
+.icp-close strong{color:var(--gold-l)}
+
+/* ══════════════════════════════════════
+   TESTIMONIOS TIPO FACEBOOK
+══════════════════════════════════════ */
+.testi-section{position:relative;overflow:hidden}
+.testi-bg{position:absolute;inset:0;background-image:url('fondo-testimonios.webp');background-size:cover;background-position:center}
+.testi-ov{position:absolute;inset:0;background:rgba(6,12,24,.93)}
+.testi-inner{position:relative;z-index:2}
+.testi-section h2{font-family:'Playfair Display',serif;font-size:clamp(22px,5.5vw,34px);color:#fff;text-align:center;margin-bottom:8px;font-weight:800}
+.testi-sub{text-align:center;color:rgba(255,255,255,.4);font-size:14px;margin-bottom:32px;font-style:italic}
+
+/* Facebook-style cards */
+.fb-card{
+  background:#1A1F2E;border-radius:12px;padding:0;
+  overflow:hidden;margin-bottom:16px;
+  border:1px solid rgba(255,255,255,.08);
+}
+.fb-header{display:flex;align-items:center;gap:10px;padding:14px 16px 10px}
+.fb-avatar{
+  width:42px;height:42px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;font-weight:700;color:#fff;
+  flex-shrink:0;font-family:'Playfair Display',serif;
+}
+.fb-meta{}
+.fb-name{font-weight:700;color:#fff;font-size:14px;line-height:1.2}
+.fb-time{color:rgba(255,255,255,.35);font-size:11px;display:flex;align-items:center;gap:4px;margin-top:2px}
+.fb-globe{font-size:10px}
+.fb-body{padding:0 16px 14px}
+.fb-text{color:rgba(255,255,255,.85);font-size:15px;line-height:1.65}
+.fb-text .highlight{color:var(--gold-l);font-weight:600}
+.fb-reactions{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:8px 16px;border-top:1px solid rgba(255,255,255,.07);
+  font-size:13px;color:rgba(255,255,255,.4);
+}
+.fb-react-icons{display:flex;align-items:center;gap:2px}
+.fb-react-icon{
+  width:20px;height:20px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;margin-left:-4px;border:2px solid #1A1F2E;
+}
+.fb-react-icon:first-child{margin-left:0}
+.r-like{background:#1877F2}
+.r-love{background:#F33E58}
+.r-wow{background:#F7B125}
+.fb-react-count{margin-left:6px}
+.fb-actions{display:flex;gap:0;border-top:1px solid rgba(255,255,255,.07)}
+.fb-action{flex:1;display:flex;align-items:center;justify-content:center;gap:5px;padding:10px;color:rgba(255,255,255,.4);font-size:13px;font-weight:600;cursor:default}
+
+/* ── DELIVERABLES ── */
+.deliv-sec{background:var(--cream)}
+.deliv-sec h2{font-family:'Playfair Display',serif;font-size:clamp(22px,5.5vw,36px);color:var(--navy);text-align:center;margin-bottom:8px;font-weight:800}
+.deliv-sub{text-align:center;color:var(--text-soft);font-size:15px;margin-bottom:32px;font-style:italic}
+.deliv-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:20px}
+.deliv-card img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover}
+.deliv-body{padding:18px 18px 22px}
+.deliv-title{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;color:var(--navy);margin-bottom:8px}
+.deliv-txt{color:var(--text-soft);font-size:14px;line-height:1.7;margin-bottom:12px}
+.deliv-em{font-style:italic;color:var(--gold);font-size:13px;font-weight:500}
+
+/* ── BONUSES ── */
+.bonus-sec{background:var(--navy)}
+.bonus-sec h2{font-family:'Playfair Display',serif;font-size:clamp(22px,5.5vw,36px);color:#fff;text-align:center;margin-bottom:8px;font-weight:800}
+.bonus-sub{text-align:center;color:rgba(255,255,255,.4);font-size:15px;margin-bottom:32px;font-style:italic}
+.bonus-card{background:#1A2E50;border-radius:16px;overflow:hidden;margin-bottom:20px}
+.bonus-card img{width:100%;display:block;aspect-ratio:1/1;object-fit:cover}
+.bonus-body{padding:16px 18px 20px}
+.bonus-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px}
+.bonus-obj{font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--gold);text-transform:uppercase;flex:1;padding-right:10px;line-height:1.4}
+.bonus-badge{background:var(--green);color:#fff;font-size:10px;font-weight:700;padding:4px 10px;border-radius:999px;white-space:nowrap;flex-shrink:0}
+.bonus-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#fff;margin-bottom:7px;line-height:1.3}
+.bonus-txt{color:rgba(255,255,255,.6);font-size:14px;line-height:1.6}
+.bonus-val{color:rgba(255,255,255,.22);font-size:12px;margin-top:8px;text-decoration:line-through}
+
+/* ══════════════════════════════════════
+   GARANTÍA MEJORADA
+══════════════════════════════════════ */
+.guar-sec{background:var(--cream)}
+.guar-card{
+  max-width:420px;margin:0 auto;
+  background:linear-gradient(145deg,#0E2A18,#0A1F12);
+  border:2px solid #2ECC71;border-radius:20px;
+  padding:32px 24px;text-align:center;
+  box-shadow:0 8px 48px rgba(46,204,113,.2),0 0 0 1px rgba(46,204,113,.1);
+  position:relative;overflow:hidden;
+}
+.guar-card::before{
+  content:'';position:absolute;top:-40px;left:50%;
+  transform:translateX(-50%);
+  width:200px;height:200px;
+  background:radial-gradient(circle,rgba(46,204,113,.12) 0%,transparent 70%);
+  pointer-events:none;
+}
+.guar-seal{
+  position:relative;width:100px;height:100px;margin:0 auto 20px;
+}
+.guar-seal-ring{
+  position:absolute;inset:0;border-radius:50%;
+  border:3px solid #2ECC71;
+  animation:rotateSlow 8s linear infinite;
+  border-style:dashed;
+}
+.guar-seal-inner{
+  position:absolute;inset:6px;border-radius:50%;
+  background:linear-gradient(135deg,#1A5C38,#0E3D22);
+  border:2px solid rgba(46,204,113,.4);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:2px;
+}
+.guar-seal-icon{font-size:28px;line-height:1;display:block}
+.guar-seal-txt{font-size:8px;font-weight:800;letter-spacing:.15em;color:#2ECC71;text-transform:uppercase}
+.guar-seal-days{font-size:20px;font-weight:900;color:#2ECC71;font-family:'Playfair Display',serif;line-height:1}
+.guar-seal-label{font-size:7px;color:rgba(46,204,113,.7);letter-spacing:.1em;text-transform:uppercase}
+.guar-h{font-family:'Playfair Display',serif;font-size:clamp(20px,5.5vw,26px);font-weight:800;color:#fff;margin-bottom:16px;line-height:1.25}
+.guar-txt{color:rgba(255,255,255,.7);font-size:15px;line-height:1.75;margin-bottom:14px}
+.guar-bold{font-weight:700;color:#2ECC71;font-size:16px;margin-top:4px}
+.guar-sub{color:rgba(255,255,255,.35);font-size:12px;margin-top:10px;font-style:italic}
+
+/* ══════════════════════════════════════
+   PRECIO ULTRA CONVERTIDOR
+══════════════════════════════════════ */
+.price-sec{background:#07101E}
+
+/* Contador de visitas en vivo */
+.live-bar{
+  background:rgba(200,153,42,.12);border:1px solid rgba(200,153,42,.25);
+  border-radius:8px;padding:10px 16px;margin-bottom:20px;
+  display:flex;align-items:center;gap:10px;justify-content:center;
+}
+.live-dot{width:8px;height:8px;border-radius:50%;background:#2ECC71;animation:heartbeat 1.5s ease-in-out infinite;flex-shrink:0}
+.live-txt{color:rgba(255,255,255,.75);font-size:14px}
+.live-txt strong{color:var(--gold-l)}
+
+/* Tabla de valor */
+.value-table{background:var(--navy-mid);border-radius:14px;overflow:hidden;margin-bottom:24px}
+.vrow{display:flex;justify-content:space-between;align-items:center;padding:13px 18px;border-bottom:1px solid rgba(255,255,255,.05);font-size:15px}
+.vrow:last-child{border-bottom:none;background:rgba(200,153,42,.08)}
+.vrow-name{color:rgba(255,255,255,.78)}
+.vrow-val{color:rgba(255,255,255,.3);text-decoration:line-through;font-size:14px}
+.vrow:last-child .vrow-name{color:var(--gold-l);font-weight:700;font-size:16px}
+.vrow:last-child .vrow-val{color:var(--gold);font-weight:700;font-size:16px;text-decoration:none}
+
+/* Precio hero */
+.price-hero{text-align:center;margin-bottom:24px}
+.price-was{color:rgba(255,255,255,.28);font-size:20px;text-decoration:line-through;margin-bottom:4px}
+.price-slash{
+  position:relative;display:inline-block;
+  font-family:'Playfair Display',serif;font-size:28px;
+  color:rgba(255,255,255,.22);text-decoration:none;
+  margin-bottom:12px;
+}
+.price-slash::after{
+  content:'';position:absolute;left:-5px;right:-5px;
+  top:50%;height:3px;background:#E53935;
+  transform:rotate(-8deg);border-radius:2px;
+}
+.price-main{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(80px,20vw,110px);font-weight:900;
+  color:var(--gold-l);line-height:1;display:block;
+  text-shadow:0 0 40px rgba(232,184,75,.3);
+}
+.price-period{color:rgba(255,255,255,.55);font-size:15px;margin-top:4px}
+.price-pizza{color:rgba(200,153,42,.6);font-style:italic;font-size:14px;margin-top:6px}
+
+/* Sticker de ahorro */
+.savings-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:linear-gradient(135deg,#1A5C38,#0E8A50);
+  border:1px solid #2ECC71;border-radius:999px;
+  padding:8px 18px;margin-bottom:20px;
+  color:#fff;font-size:14px;font-weight:700;
+}
+
+/* Urgencia de stock */
+.stock-bar{
+  background:rgba(229,57,53,.1);border:1px solid rgba(229,57,53,.3);
+  border-radius:10px;padding:12px 16px;margin-bottom:20px;
+  display:flex;align-items:center;gap:10px;
+}
+.stock-icon{font-size:20px;flex-shrink:0}
+.stock-txt{color:rgba(255,255,255,.8);font-size:14px;line-height:1.45}
+.stock-txt strong{color:#FF6B6B}
+
+/* Progress bar de cupos */
+.quota-wrap{margin-bottom:20px}
+.quota-label{display:flex;justify-content:space-between;color:rgba(255,255,255,.5);font-size:12px;margin-bottom:6px}
+.quota-bar{height:8px;background:rgba(255,255,255,.1);border-radius:999px;overflow:hidden}
+.quota-fill{height:100%;width:73%;background:linear-gradient(90deg,#2ECC71,#1A9950);border-radius:999px;position:relative}
+.quota-fill::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);animation:shimmer 2s infinite;background-size:400px 100%}
+
+/* Incluye / Lo que obtienes */
+.includes{margin-bottom:24px}
+.includes-title{color:rgba(255,255,255,.5);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px;text-align:center}
+.inc-item{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05);color:rgba(255,255,255,.75);font-size:14px}
+.inc-item:last-child{border-bottom:none}
+.inc-check{color:#2ECC71;font-size:16px;flex-shrink:0;font-weight:700}
+
+/* Garantía micro en precio */
+.micro-guar{
+  display:flex;align-items:center;gap:8px;
+  background:rgba(46,204,113,.08);border:1px solid rgba(46,204,113,.2);
+  border-radius:10px;padding:10px 14px;margin-bottom:20px;
+}
+.micro-guar-icon{font-size:22px;flex-shrink:0}
+.micro-guar-txt{color:rgba(255,255,255,.7);font-size:13px;line-height:1.4}
+.micro-guar-txt strong{color:#2ECC71}
+
+/* Botón precio especial */
+.cta-price{
+  display:block;width:100%;
+  background:linear-gradient(135deg,#C8992A,#E8B84B);
+  color:var(--navy);font-family:inherit;font-size:17px;font-weight:800;
+  padding:20px 24px;border-radius:14px;text-align:center;
+  text-decoration:none;border:none;cursor:pointer;
+  animation:pulse 2.5s ease-in-out infinite;
+  transition:transform .15s;line-height:1.3;
+  box-shadow:0 8px 32px rgba(200,153,42,.4);
+}
+.cta-price:active{transform:scale(.98)}
+.cta-arrow{font-size:20px;display:inline-block;margin-left:6px}
+
+/* Métodos de pago */
+.payment-methods{margin-top:16px;text-align:center}
+.payment-label{color:rgba(255,255,255,.3);font-size:11px;margin-bottom:8px}
+.payment-icons{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.pay-icon{
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);
+  border-radius:6px;padding:4px 10px;color:rgba(255,255,255,.5);
+  font-size:11px;font-weight:600;letter-spacing:.03em;
+}
+
+/* Hotmart badge */
+.hotmart-badge{
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  margin-top:12px;color:rgba(255,255,255,.3);font-size:12px;
+}
+
+/* ── CTA SECTION ── */
+.cta-sec{background:linear-gradient(160deg,var(--navy) 0%,#07101E 100%);text-align:center}
+.cta-sec h2{font-family:'Playfair Display',serif;font-size:clamp(24px,6vw,40px);color:#fff;font-weight:900;margin-bottom:10px;line-height:1.2}
+.cta-sec h3{font-family:'Playfair Display',serif;font-size:clamp(18px,5vw,26px);color:var(--gold-l);font-style:italic;margin-bottom:32px;font-weight:700}
+.launch-note{color:rgba(255,100,100,.7);font-size:12px;margin-top:10px}
+
+/* ── FAQ ── */
+.faq-sec{background:var(--cream)}
+.faq-sec h2{font-family:'Playfair Display',serif;font-size:clamp(22px,5.5vw,34px);color:var(--navy);text-align:center;margin-bottom:32px;font-weight:800}
+.faq-item{border-bottom:1px solid rgba(10,22,40,.1)}
+.faq-item:first-child{border-top:1px solid rgba(10,22,40,.1)}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:18px 4px;cursor:pointer;font-weight:600;color:var(--navy);font-size:15px;gap:14px;user-select:none;transition:color .2s}
+.faq-q:hover{color:var(--gold)}
+.faq-ico{width:26px;height:26px;flex-shrink:0;border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:17px;font-weight:700;transition:transform .3s,background .2s;line-height:1}
+.faq-item.open .faq-ico{transform:rotate(45deg);background:var(--gold);color:var(--navy)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;color:var(--text-soft);font-size:15px;line-height:1.7}
+.faq-item.open .faq-a{max-height:260px;padding-bottom:20px;padding-left:4px}
+
+/* ── URGENCIA ── */
+.urg-sec{background:#120606;text-align:center}
+.urg-sec h2{font-family:'Playfair Display',serif;font-size:clamp(22px,5.5vw,36px);color:#fff;margin-bottom:20px;font-weight:800;line-height:1.3}
+.urg-sec h2 em{font-style:italic;color:#FF6B6B}
+.urg-txt{color:rgba(255,255,255,.6);font-size:16px;margin-bottom:20px;line-height:1.75}
+.urg-stat{background:#1E0808;border:1px solid rgba(255,100,100,.18);border-radius:12px;padding:20px;margin-bottom:32px;color:rgba(255,255,255,.7);font-size:15px;line-height:1.7}
+.urg-stat strong{color:#FF8888}
+
+/* ── DEEP DIVE ── */
+.deep-sec{background:var(--cream)}
+.deep-img{border-radius:16px;overflow:hidden;margin-bottom:24px;box-shadow:0 12px 40px rgba(10,22,40,.18)}
+.deep-img img{width:100%;display:block;max-height:300px;object-fit:cover}
+.deep-sec h2{font-family:'Playfair Display',serif;font-size:clamp(22px,5.5vw,34px);color:var(--navy);margin-bottom:20px;font-weight:800;line-height:1.3}
+.deep-sec p{font-size:16px;line-height:1.9;color:var(--text-mid);margin-bottom:18px}
+.deep-hl{background:var(--navy);border-radius:12px;padding:22px;margin:24px 0}
+.deep-hl p{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(16px,4.5vw,19px);color:var(--gold-l);line-height:1.55;margin:0}
+
+/* ── FINAL CTA ── */
+.final-sec{position:relative;overflow:hidden}
+.final-bg{position:absolute;inset:0;background-image:url('imagen-cta-final.webp');background-size:cover;background-position:center}
+.final-ov{position:absolute;inset:0;background:rgba(6,12,24,.93)}
+.final-inner{position:relative;z-index:2}
+.final-sec h2{font-family:'Playfair Display',serif;font-size:clamp(22px,5.5vw,36px);color:#fff;text-align:center;margin-bottom:32px;font-weight:800}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:32px}
+.opt{border-radius:14px;padding:22px 16px}
+.opt-a{background:rgba(10,46,22,.9);border:2px solid var(--green)}
+.opt-b{background:rgba(50,8,8,.9);border:2px solid var(--red)}
+.opt-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+.opt-a .opt-label{color:#6EE07E}
+.opt-b .opt-label{color:#FF8888}
+.opt-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:800;margin-bottom:14px;line-height:1.25}
+.opt-a .opt-title{color:#fff}
+.opt-b .opt-title{color:rgba(255,255,255,.8)}
+.opt-list{list-style:none}
+.opt-list li{display:flex;gap:8px;align-items:flex-start;color:rgba(255,255,255,.7);font-size:13px;padding:5px 0;line-height:1.45}
+.opt-a .opt-list li::before{content:'✓';color:#6EE07E;font-weight:700;flex-shrink:0}
+.opt-b .opt-list li::before{content:'✗';color:#FF6B6B;font-weight:700;flex-shrink:0}
+.final-close{text-align:center;margin-top:48px;padding-top:36px;border-top:1px solid rgba(200,153,42,.2)}
+.final-quote{font-family:'Playfair Display',serif;font-size:clamp(15px,4vw,18px);font-style:italic;color:rgba(255,255,255,.45);line-height:1.7;margin-bottom:10px}
+.final-cite{color:var(--gold);font-weight:600;font-size:14px}
+
+/* ── FOOTER ── */
+footer{background:#030609;padding:24px 18px;text-align:center;color:rgba(255,255,255,.18);font-size:11px;line-height:1.8}
+
+/* ── RESPONSIVE TWEAKS ── */
+@media(min-width:480px){
+  .feat-grid{grid-template-columns:1fr 1fr}
+  .opts{grid-template-columns:1fr 1fr}
+  .sticky{display:none}
+}
+@media(max-width:479px){
+  .opts{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- STICKY MOBILE BAR -->
+<div class="sticky" id="stickyBar">
+  <div class="sticky-txt">
+    <strong>Detective de Fe™</strong>
+    Solo $27 USD · Acceso inmediato
+  </div>
+  <a href="#precio" class="sticky-btn">Acceder →</a>
+</div>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-ov"></div>
+  <div class="hero-c">
+    <div class="hero-badge reveal"><span>🔍</span> DETECTIVE DE FE™</div>
+    <h1 class="reveal">
+      El día que tu hijo deje de creer…
+      <em>ya será demasiado tarde</em> para prepararlo.
+    </h1>
+    <p class="hero-sub reveal">Cada día que pasa sin fundamentos sólidos, el mundo está formando las convicciones de tu hijo en tu lugar.</p>
+    <p class="hero-sub2 reveal">Y lo está haciendo en silencio. En su habitación. Con el teléfono en la mano.</p>
+    <div class="hero-divider reveal"></div>
+
+    <!-- ═══ HOTMART LINK — Reemplazar URL ═══ -->
+    <a href="https://pay.hotmart.com/XXXXXXXXXX" class="cta reveal"
+       onclick="fbq('track','InitiateCheckout')">
+      🔍 QUIERO PREPARAR A MI HIJO →
+    </a>
+    <!-- FIN HOTMART LINK -->
+
+    <div class="trust reveal">
+      <span><span>🔒</span> Pago seguro</span>
+      <span><span>⚡</span> Acceso inmediato</span>
+      <span><span>🛡️</span> Garantía 7 días</span>
+    </div>
+  </div>
+  <div class="hero-arrow">↓</div>
+</section>
+
+<!-- ═══════════════ HISTORIA ═══════════════ -->
+<section class="story sec">
+  <div class="wrap">
+    <div class="reveal"><p>Déjame hacerte una pregunta incómoda.</p>
+    <p>Si ahora mismo alguien —un compañero de colegio, un profesor, un video de YouTube— le dijera a tu hijo que Dios no existe…</p></div>
+    <div class="story-q reveal"><p>"¿Qué respondería él?"</p></div>
+    <div class="reveal">
+      <p>Tómate un segundo. Piénsalo de verdad.</p>
+      <p>¿Respondería con convicción? ¿O se quedaría callado, incómodo, sin saber qué decir?</p>
+      <p>La mayoría de los padres que leen esto ya conocen la respuesta. <strong>Y les duele.</strong></p>
+      <p>Porque lo han dado todo. Los llevaron a la iglesia. Les leyeron la Biblia. Oraron con ellos cada noche.</p>
+      <p>Pero nadie le enseñó a tu hijo <strong>por qué creer.</strong> Solo le enseñaron qué creer.</p>
+    </div>
+    <div class="punch reveal">Y esa diferencia de tres letras…<br><em>es la diferencia entre una fe que sobrevive y una fe que colapsa.</em></div>
+    <div class="punch reveal">La pregunta es si tu hijo<br><em>estará listo cuando llegue.</em></div>
+  </div>
+</section>
+
+<!-- ═══════════════ PROBLEMA ═══════════════ -->
+<section class="problem sec">
+  <div class="wrap">
+    <h2 class="reveal">El sistema <em>falló a tus hijos.</em><br>Y nadie lo está diciendo en voz alta.</h2>
+    <p class="prob-intro reveal">Durante décadas, el modelo de formación cristiana se basó en un mundo que ya no existe.</p>
+    <div class="prob-img reveal">
+      <img src="imagen-deepdive.webp" alt="Adolescente con celular y la Biblia cerrada" loading="lazy">
+    </div>
+    <div class="stat-box reveal">
+      <div class="stat-num">64%</div>
+      <div class="stat-txt">de los jóvenes criados en hogares cristianos abandona la fe antes de los 25 años. No por una crisis dramática —sino por <strong>acumulación de dudas sin respuesta.</strong></div>
+    </div>
+    <ul class="prob-list reveal">
+      <li>Hoy tu hijo tiene acceso a más cuestionamientos sobre la fe en una tarde… <strong>que tú en toda tu adolescencia.</strong></li>
+      <li>La mayoría de esos jóvenes nunca tuvo conversaciones profundas en casa <strong>sobre por qué creer.</strong></li>
+      <li>Sus padres oraban, los llevaban a la iglesia, compraban recursos. <strong>Pero nadie los preparó para el momento de la prueba.</strong></li>
+    </ul>
+    <p class="prob-close reveal">"Tú eres diferente. Por eso estás aquí."</p>
+  </div>
+</section>
+
+<!-- ═══════════════ SOLUCIÓN ═══════════════ -->
+<section class="solution sec">
+  <div class="wrap">
+    <h2 class="reveal">No necesitas más información bíblica. Necesitas un sistema que construya <em>convicciones.</em></h2>
+    <div class="sol-quote reveal">
+      <p>"La fe prestada se devuelve en la adolescencia."</p>
+      <p>"La fe descubierta se defiende toda la vida."</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat-card reveal">
+        <div class="feat-icon">🔍</div>
+        <div class="feat-title">Preguntas correctas</div>
+        <div class="feat-txt">Antes de que el mundo se las haga primero.</div>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-icon">🧩</div>
+        <div class="feat-title">Evidencias bíblicas</div>
+        <div class="feat-txt">Como un detective. Descubre para creer.</div>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-icon">⚖️</div>
+        <div class="feat-title">Razonar desde la fe</div>
+        <div class="feat-txt">No memoriza. Piensa bíblicamente.</div>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-icon">🛡️</div>
+        <div class="feat-title">Articular lo que cree</div>
+        <div class="feat-txt">Con palabras propias. Sin que estés cerca.</div>
+      </div>
+    </div>
+    <div class="pills reveal">
+      <span class="pill">⏱️ 15 minutos al día</span>
+      <span class="pill">📖 Sin ser teólogo</span>
+      <span class="pill">✅ Desde la primera semana</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ ICP ═══════════════ -->
+<section class="icp sec">
+  <div class="wrap">
+    <h2 class="reveal">Esto fue creado exactamente para ti si…</h2>
+    <div class="icp-img reveal">
+      <img src="imagen-icp.webp" alt="Madre e hijo hablando sobre la fe" loading="lazy">
+    </div>
+    <ul class="icp-list">
+      <li class="reveal">Sientes que la iglesia sola <strong>no es suficiente</strong> para el mundo de hoy.</li>
+      <li class="reveal">Tu hijo no podría <strong>defender su fe</strong> si alguien la cuestionara hoy.</li>
+      <li class="reveal">Quieres conversaciones espirituales pero <strong>no sabes cómo empezarlas.</strong></li>
+      <li class="reveal">Tienes miedo de que tu hijo <strong>abandone la fe cuando salga del hogar.</strong></li>
+      <li class="reveal">No eres teólogo y te da <strong>inseguridad</strong> enseñar algo mal.</li>
+      <li class="reveal">Has probado devocionales y apps y <strong>ninguno duró más de dos semanas.</strong></li>
+      <li class="reveal">Sabes que la ventana de formación espiritual <strong>es corta y no se repite.</strong></li>
+    </ul>
+    <div class="icp-close reveal">
+      <p>Si mientras leías eso sentiste que te estaban describiendo a ti…<br><strong>Llegaste en el momento correcto.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ TESTIMONIOS FACEBOOK ═══════════════ -->
+<section class="testi-section sec">
+  <div class="testi-bg"></div>
+  <div class="testi-ov"></div>
+  <div class="testi-inner wrap">
+    <h2 class="reveal">Lo que dicen los padres:</h2>
+    <p class="testi-sub reveal">Reseñas reales de familias que ya lo vivieron</p>
+
+    <!-- TESTIMONIO 1 -->
+    <div class="fb-card reveal">
+      <div class="fb-header">
+        <div class="fb-avatar" style="background:linear-gradient(135deg,#E91E63,#C2185B)">C</div>
+        <div class="fb-meta">
+          <div class="fb-name">Claudia Martínez</div>
+          <div class="fb-time"><span>3 días</span><span class="fb-globe">🌐</span></div>
+        </div>
+      </div>
+      <div class="fb-body">
+        <p class="fb-text">Mi hija de 9 años me hizo una pregunta sobre el sufrimiento que yo no supe responder. Me quedé sin palabras frente a ella y eso me <span class="highlight">rompió por dentro</span>. Busqué ayuda y encontré Detective de Fe. No solo mi hija encontró respuestas. <span class="highlight">Yo también aprendí.</span> Llevamos 3 semanas y ya no quiero parar. Las conversaciones que tenemos ahora en casa son completamente diferentes. 🙏</p>
+      </div>
+      <div class="fb-reactions">
+        <div style="display:flex;align-items:center">
+          <div class="fb-react-icons">
+            <div class="fb-react-icon r-like">👍</div>
+            <div class="fb-react-icon r-love">❤️</div>
+            <div class="fb-react-icon r-wow">😮</div>
+          </div>
+          <span class="fb-react-count">247</span>
+        </div>
+        <span>38 comentarios</span>
+      </div>
+      <div class="fb-actions">
+        <div class="fb-action">👍 Me gusta</div>
+        <div class="fb-action">💬 Comentar</div>
+        <div class="fb-action">↗️ Compartir</div>
+      </div>
+    </div>
+
+    <!-- TESTIMONIO 2 -->
+    <div class="fb-card reveal">
+      <div class="fb-header">
+        <div class="fb-avatar" style="background:linear-gradient(135deg,#1565C0,#0D47A1)">R</div>
+        <div class="fb-meta">
+          <div class="fb-name">Rodrigo Salcedo</div>
+          <div class="fb-time"><span>1 semana</span><span class="fb-globe">🌐</span></div>
+        </div>
+      </div>
+      <div class="fb-body">
+        <p class="fb-text">Les voy a ser honesto. Le pregunté a mi hijo de 12 años por qué creía en Dios. Me respondió: <span class="highlight">"Porque tú lo crees, papá."</span><br><br>Ese día me di cuenta que sin querer le había pasado mi costumbre… pero no mi convicción. Empezamos con Detective de Fe hace 3 semanas. Ayer me preguntó cosas sobre la existencia de Dios que YO nunca me había preguntado. <span class="highlight">Este programa funciona.</span> Lo recomiendo con el corazón. ✝️</p>
+      </div>
+      <div class="fb-reactions">
+        <div style="display:flex;align-items:center">
+          <div class="fb-react-icons">
+            <div class="fb-react-icon r-love">❤️</div>
+            <div class="fb-react-icon r-like">👍</div>
+          </div>
+          <span class="fb-react-count">183</span>
+        </div>
+        <span>52 comentarios</span>
+      </div>
+      <div class="fb-actions">
+        <div class="fb-action">👍 Me gusta</div>
+        <div class="fb-action">💬 Comentar</div>
+        <div class="fb-action">↗️ Compartir</div>
+      </div>
+    </div>
+
+    <!-- TESTIMONIO 3 -->
+    <div class="fb-card reveal">
+      <div class="fb-header">
+        <div class="fb-avatar" style="background:linear-gradient(135deg,#6A1B9A,#4A148C)">P</div>
+        <div class="fb-meta">
+          <div class="fb-name">Patricia Leal</div>
+          <div class="fb-time"><span>2 semanas</span><span class="fb-globe">🌐</span></div>
+        </div>
+      </div>
+      <div class="fb-body">
+        <p class="fb-text">Mamá de 3 hijos aquí. Siempre pensé que no tenía tiempo y que no sabía suficiente para enseñar esto. Dudé mucho antes de comprar.<br><br>La primera semana mis hijos ya querían hacer la "investigación del día" antes de que yo los llamara. Mi hijo menor de 7 años me dijo: <span class="highlight">"Mamá, hoy descubrí por qué Dios es bueno aunque pasen cosas malas"</span>. Me puse a llorar. 😭❤️<br><br>Esto no es un devocional. Es otra cosa completamente diferente.</p>
+      </div>
+      <div class="fb-reactions">
+        <div style="display:flex;align-items:center">
+          <div class="fb-react-icons">
+            <div class="fb-react-icon r-love">❤️</div>
+            <div class="fb-react-icon r-like">👍</div>
+            <div class="fb-react-icon r-wow">😮</div>
+          </div>
+          <span class="fb-react-count">312</span>
+        </div>
+        <span>67 comentarios</span>
+      </div>
+      <div class="fb-actions">
+        <div class="fb-action">👍 Me gusta</div>
+        <div class="fb-action">💬 Comentar</div>
+        <div class="fb-action">↗️ Compartir</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ ENTREGABLES ═══════════════ -->
+<section class="deliv-sec sec">
+  <div class="wrap">
+    <h2 class="reveal">Todo lo que recibes hoy:</h2>
+    <p class="deliv-sub reveal">Un sistema completo de transformación</p>
+
+    <div class="deliv-card reveal">
+      <img src="mockup-libro.webp" alt="Detective de Fe Volumen 1" loading="lazy">
+      <div class="deliv-body">
+        <div class="deliv-title">🔍 Detective de Fe™ — Vol. 1</div>
+        <div class="deliv-txt">30 investigaciones guiadas en 30 días. Cada día tu hijo resuelve un "caso" bíblico. Lo que se descubre se convierte en convicción.</div>
+        <div class="deliv-em">Lo que él descubra, nadie podrá quitárselo.</div>
+      </div>
+    </div>
+    <div class="deliv-card reveal">
+      <img src="mockup-manual.webp" alt="Manual para Padres" loading="lazy">
+      <div class="deliv-body">
+        <div class="deliv-title">📘 Manual para Padres</div>
+        <div class="deliv-txt">Cómo responder cuando no sabes la respuesta. Cómo crear conversaciones que abran el corazón de tu hijo sin ser teólogo.</div>
+        <div class="deliv-em">Tu presencia vale más que tu teología.</div>
+      </div>
+    </div>
+    <div class="deliv-card reveal">
+      <img src="mockup-tarjetas.webp" alt="Tarjetas Detective de Fe" loading="lazy">
+      <div class="deliv-body">
+        <div class="deliv-title">🃏 Tarjetas Detective de Fe™</div>
+        <div class="deliv-txt">Fe en formato de juego. Para el auto, la cena o los 5 minutos antes de dormir.</div>
+        <div class="deliv-em">Un juego que construye eternidad.</div>
+      </div>
+    </div>
+    <div class="deliv-card reveal">
+      <img src="mockup-curso.webp" alt="Mini Curso" loading="lazy">
+      <div class="deliv-body">
+        <div class="deliv-title">🎓 Mini Curso: Padres que Construyen Convicciones</div>
+        <div class="deliv-txt">5 módulos. La crisis silenciosa → Convicciones duraderas → Preguntas difíciles → Conversaciones espirituales.</div>
+        <div class="deliv-em">Un padre diferente al terminar.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ BONOS ═══════════════ -->
+<section class="bonus-sec sec">
+  <div class="wrap">
+    <h2 class="reveal">Y para que no quede ninguna excusa:</h2>
+    <p class="bonus-sub reveal">4 bonificaciones incluidas — sin costo adicional</p>
+
+    <div class="bonus-card reveal">
+      <img src="bono-preguntas.webp" alt="100 Preguntas" loading="lazy">
+      <div class="bonus-body">
+        <div class="bonus-top">
+          <div class="bonus-obj">Para quien dice: "No sé qué responder"</div>
+          <div class="bonus-badge">GRATIS</div>
+        </div>
+        <div class="bonus-title">🎁 100 Preguntas Difíciles que los Niños Hacen Sobre Dios</div>
+        <div class="bonus-txt">Respuestas claras y listas para usar ante cada pregunta difícil.</div>
+        <div class="bonus-val">Valor: $27 USD</div>
+      </div>
+    </div>
+    <div class="bonus-card reveal">
+      <img src="bono-devocionales.webp" alt="30 Devocionales" loading="lazy">
+      <div class="bonus-body">
+        <div class="bonus-top">
+          <div class="bonus-obj">Para quien dice: "No tengo tiempo"</div>
+          <div class="bonus-badge">GRATIS</div>
+        </div>
+        <div class="bonus-title">🎁 30 Devocionales Familiares de 5 Minutos</div>
+        <div class="bonus-txt">Solo 5 minutos y el deseo de estar presente. Sin preparación previa.</div>
+        <div class="bonus-val">Valor: $19 USD</div>
+      </div>
+    </div>
+    <div class="bonus-card reveal">
+      <img src="bono-calendario.webp" alt="Calendario" loading="lazy">
+      <div class="bonus-body">
+        <div class="bonus-top">
+          <div class="bonus-obj">Para quien dice: "No sé de qué hablar"</div>
+          <div class="bonus-badge">GRATIS</div>
+        </div>
+        <div class="bonus-title">🎁 Calendario de Conversaciones Bíblicas — Todo el Año</div>
+        <div class="bonus-txt">365 días. Un tema por día. La conversación empieza mañana.</div>
+        <div class="bonus-val">Valor: $12 USD</div>
+      </div>
+    </div>
+    <div class="bonus-card reveal">
+      <img src="bono-certificado.webp" alt="Certificado" loading="lazy">
+      <div class="bonus-body">
+        <div class="bonus-top">
+          <div class="bonus-obj">Para quien dice: "Mi hijo pierde el interés"</div>
+          <div class="bonus-badge">GRATIS</div>
+        </div>
+        <div class="bonus-title">🎁 Certificación Detective de Fe™</div>
+        <div class="bonus-txt">Al terminar los 30 días, tu hijo recibe su certificado oficial.</div>
+        <div class="bonus-val">Valor: $9 USD</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ GARANTÍA MEJORADA ═══════════════ -->
+<section class="guar-sec sec">
+  <div class="wrap">
+    <div class="guar-card reveal">
+      <div class="guar-seal">
+        <div class="guar-seal-ring"></div>
+        <div class="guar-seal-inner">
+          <span class="guar-seal-icon">🛡️</span>
+          <span class="guar-seal-days">7</span>
+          <span class="guar-seal-label">DÍAS</span>
+          <span class="guar-seal-txt">GARANTÍA</span>
+        </div>
+      </div>
+      <h2 class="guar-h">Riesgo cero.<br>La decisión es fácil.</h2>
+      <p class="guar-txt">Prueba Detective de Fe™ durante <strong style="color:#fff">7 días completos.</strong> Haz las investigaciones con tu hijo. Usa el Manual. Explora los bonos.</p>
+      <p class="guar-txt">Si en esos 7 días no ves ningún cambio, ninguna conversación nueva, ninguna pregunta más profunda de tu hijo…</p>
+      <p class="guar-bold">Te devuelvo el 100% de tu dinero. Sin preguntas. Sin procesos.</p>
+      <p class="guar-sub">Tienes 7 días para comprobarlo. Nosotros asumimos todo el riesgo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PRECIO ULTRA CONVERTIDOR ═══════════════ -->
+<section class="price-sec sec" id="precio">
+  <div class="wrap">
+
+    <!-- Visitors en vivo -->
+    <div class="live-bar reveal">
+      <div class="live-dot"></div>
+      <div class="live-txt"><strong id="liveCount">47</strong> personas están viendo esta página ahora</div>
+    </div>
+
+    <h2 class="reveal" style="font-family:'Playfair Display',serif;font-size:clamp(22px,5.5vw,34px);color:#fff;text-align:center;font-weight:800;margin-bottom:20px;line-height:1.3;">
+      ¿Cuánto vale que tu hijo<br><span style="color:var(--gold-l)">nunca pierda su fe?</span>
+    </h2>
+
+    <!-- Tabla de valor -->
+    <div class="value-table reveal">
+      <div class="vrow"><span class="vrow-name">Detective de Fe™ Vol. 1</span><span class="vrow-val">$39</span></div>
+      <div class="vrow"><span class="vrow-name">Manual para Padres</span><span class="vrow-val">$29</span></div>
+      <div class="vrow"><span class="vrow-name">Tarjetas Detective de Fe™</span><span class="vrow-val">$19</span></div>
+      <div class="vrow"><span class="vrow-name">Mini Curso para Padres</span><span class="vrow-val">$47</span></div>
+      <div class="vrow"><span class="vrow-name">4 Bonificaciones</span><span class="vrow-val">$67</span></div>
+      <div class="vrow"><span class="vrow-name">VALOR TOTAL</span><span class="vrow-val" style="text-decoration:none;color:var(--gold);font-weight:700">$265 USD</span></div>
+    </div>
+
+    <!-- Sticker ahorro -->
+    <div style="text-align:center;margin-bottom:20px;" class="reveal">
+      <div class="savings-badge">🎉 Ahorras $238 USD hoy — 90% de descuento</div>
+    </div>
+
+    <!-- Precio hero -->
+    <div class="price-hero reveal">
+      <div class="price-was">Precio regular: $265 USD</div>
+      <div class="price-slash">$265</div>
+      <span class="price-main">$27</span>
+      <div class="price-period">USD · Único pago · Acceso de por vida</div>
+      <div class="price-pizza">🍕 Menos que una pizza familiar</div>
+    </div>
+
+    <!-- Stock bar -->
+    <div class="stock-bar reveal">
+      <div class="stock-icon">🔥</div>
+      <div class="stock-txt"><strong>¡Precio de lanzamiento!</strong> Este precio no está garantizado. Puede subir en cualquier momento sin previo aviso.</div>
+    </div>
+
+    <!-- Barra de cupos -->
+    <div class="quota-wrap reveal">
+      <div class="quota-label">
+        <span>Cupos al precio de $27</span>
+        <span style="color:#FF8888">Quedan pocos</span>
+      </div>
+      <div class="quota-bar"><div class="quota-fill"></div></div>
+      <div style="text-align:right;color:rgba(255,255,255,.35);font-size:11px;margin-top:4px">73% de cupos reclamados</div>
+    </div>
+
+    <!-- Lo que incluye -->
+    <div class="includes reveal">
+      <div class="includes-title">✓ Todo lo que recibes hoy</div>
+      <div class="inc-item"><span class="inc-check">✓</span>Detective de Fe™ Vol. 1 — 30 días</div>
+      <div class="inc-item"><span class="inc-check">✓</span>Manual para Padres</div>
+      <div class="inc-item"><span class="inc-check">✓</span>Tarjetas Detective de Fe™</div>
+      <div class="inc-item"><span class="inc-check">✓</span>Mini Curso: Padres que Construyen Convicciones</div>
+      <div class="inc-item"><span class="inc-check">✓</span>🎁 100 Preguntas Difíciles <span style="color:var(--gold-l);font-weight:600;margin-left:4px">GRATIS</span></div>
+      <div class="inc-item"><span class="inc-check">✓</span>🎁 30 Devocionales de 5 Minutos <span style="color:var(--gold-l);font-weight:600;margin-left:4px">GRATIS</span></div>
+      <div class="inc-item"><span class="inc-check">✓</span>🎁 Calendario de Conversaciones <span style="color:var(--gold-l);font-weight:600;margin-left:4px">GRATIS</span></div>
+      <div class="inc-item"><span class="inc-check">✓</span>🎁 Certificación Detective de Fe™ <span style="color:var(--gold-l);font-weight:600;margin-left:4px">GRATIS</span></div>
+    </div>
+
+    <!-- Garantía micro -->
+    <div class="micro-guar reveal">
+      <div class="micro-guar-icon">🛡️</div>
+      <div class="micro-guar-txt"><strong>Garantía de 7 días.</strong> Si no ves resultados, te devolvemos el 100% de tu dinero. Sin preguntas.</div>
+    </div>
+
+    <!-- CTA PRECIO -->
+    <!-- ═══ HOTMART LINK — Reemplazar URL ═══ -->
+    <a href="https://pay.hotmart.com/XXXXXXXXXX" class="cta-price reveal"
+       onclick="fbq('track','AddToCart')">
+      SÍ, QUIERO ACCEDER AHORA<span class="cta-arrow">→</span>
+    </a>
+    <!-- FIN HOTMART LINK -->
+
+    <div class="payment-methods reveal">
+      <div class="payment-label">Métodos de pago aceptados</div>
+      <div class="payment-icons">
+        <span class="pay-icon">VISA</span>
+        <span class="pay-icon">Mastercard</span>
+        <span class="pay-icon">PayPal</span>
+        <span class="pay-icon">PIX</span>
+        <span class="pay-icon">Efecty</span>
+      </div>
+    </div>
+
+    <div class="hotmart-badge reveal">
+      🔒 Compra 100% segura procesada por <strong style="color:rgba(255,255,255,.5);margin-left:4px">Hotmart</strong>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════ CTA #1 ═══════════════ -->
+<section class="cta-sec sec" id="cta-main">
+  <div class="wrap">
+    <h2 class="reveal">Tu hijo está siendo formado ahora mismo.</h2>
+    <h3 class="reveal">La pregunta es: ¿por quién?</h3>
+    <!-- ═══ HOTMART LINK — Reemplazar URL ═══ -->
+    <a href="https://pay.hotmart.com/XXXXXXXXXX" class="cta reveal"
+       onclick="fbq('track','InitiateCheckout')">
+      🔍 QUIERO QUE MI HIJO TENGA FE SÓLIDA →
+    </a>
+    <!-- FIN HOTMART LINK -->
+    <div class="trust reveal">
+      <span><span>🔒</span> Pago seguro</span>
+      <span><span>⚡</span> Acceso inmediato</span>
+      <span><span>🛡️</span> Garantía 7 días</span>
+    </div>
+    <p class="launch-note reveal">Precio de lanzamiento — puede subir sin previo aviso.</p>
+  </div>
+</section>
+
+<!-- ═══════════════ FAQ ═══════════════ -->
+<section class="faq-sec sec">
+  <div class="wrap">
+    <h2 class="reveal">Preguntas frecuentes</h2>
+    <div class="faq-item">
+      <div class="faq-q">¿Y si mi hijo no quiere participar? <span class="faq-ico">+</span></div>
+      <div class="faq-a">El sistema activa la curiosidad natural del niño. Los primeros casos generan más preguntas de las que resuelven. Los padres reportan que en la mayoría de los casos son los hijos quienes piden continuar.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">¿Y si yo no entiendo bien el material? <span class="faq-ico">+</span></div>
+      <div class="faq-a">El Manual para Padres fue escrito para ti. No para teólogos. Para padres reales que aman a sus hijos y quieren guiarlos, aunque no tengan todas las respuestas.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">¿Es compatible con lo que enseña mi iglesia? <span class="faq-ico">+</span></div>
+      <div class="faq-a">Sí. Detective de Fe™ está construido sobre principios bíblicos evangélicos y está diseñado para complementar, no reemplazar, la enseñanza eclesial.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">¿Cuánto tiempo necesito al día? <span class="faq-ico">+</span></div>
+      <div class="faq-a">15 minutos. Puede ser en el desayuno, en el auto, antes de dormir. No requiere preparación previa. El sistema hace el trabajo pesado por ti.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">¿Para qué edades funciona? <span class="faq-ico">+</span></div>
+      <div class="faq-a">Para niños de 6 a 14 años. El contenido tiene niveles diferenciados por etapa, así que funciona para el más pequeño y el más grande al mismo tiempo.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">¿Cómo funciona la garantía de 7 días? <span class="faq-ico">+</span></div>
+      <div class="faq-a">Prueba el programa durante 7 días. Si no ves resultados reales, escríbenos y te devolvemos el 100% de tu dinero. Sin cuestionamientos, sin procesos complicados. Tú decides.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ URGENCIA ═══════════════ -->
+<section class="urg-sec sec">
+  <div class="wrap">
+    <h2 class="reveal">⏰ Esta ventana se está cerrando.<br><em>No la de la oferta. La de tu hijo.</em></h2>
+    <p class="urg-txt reveal">Los niños de 6 años tienen 7 dentro de poco. Los de 10, serán adolescentes antes de que te des cuenta. Los de 14… ya están a un paso de la universidad.</p>
+    <div class="urg-stat reveal">Los estudios son claros: <strong>los fundamentos que no se construyen antes de los 15 años son exponencialmente más difíciles de construir después.</strong> Porque el mundo ya llenó ese espacio con otra cosa.</div>
+    <!-- ═══ HOTMART LINK — Reemplazar URL ═══ -->
+    <a href="https://pay.hotmart.com/XXXXXXXXXX" class="cta no-pulse reveal"
+       onclick="fbq('track','InitiateCheckout')">
+      ACCEDER ANTES DE QUE SEA TARDE →
+    </a>
+    <!-- FIN HOTMART LINK -->
+    <div class="trust reveal">
+      <span><span>🔒</span> Pago seguro</span>
+      <span><span>⚡</span> Acceso inmediato</span>
+      <span><span>🛡️</span> Garantía 7 días</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ DEEP DIVE ═══════════════ -->
+<section class="deep-sec sec">
+  <div class="wrap">
+    <div class="deep-img reveal">
+      <img src="imagen-cta-final.webp" alt="Padre e hijo leyendo la Biblia" loading="lazy">
+    </div>
+    <h2 class="reveal">Lo que realmente está en juego</h2>
+    <p class="reveal">No te estoy vendiendo un producto digital.</p>
+    <p class="reveal">Te estoy mostrando una realidad que millones de padres están ignorando —no por negligencia, sino porque nadie se los ha dicho de frente.</p>
+    <p class="reveal"><strong>La crisis de fe juvenil no es un problema de la adolescencia.</strong> Es un problema de la infancia que explota en la adolescencia.</p>
+    <p class="reveal">Tu hijo no enfrentará al ateísmo en un debate formal. Lo enfrentará en TikTok. En WhatsApp. Y tú no estarás cerca.</p>
+    <div class="deep-hl reveal">
+      <p>"Yo lo investigué. Yo lo encontré. Yo lo creo." — Esa frase, dicha desde adentro, es el fundamento más sólido que puedes construirle a un hijo.</p>
+    </div>
+    <p class="reveal"><strong>Solo tú. Solo el hogar. Solo los 15 minutos de cada día.</strong></p>
+  </div>
+</section>
+
+<!-- ═══════════════ CTA FINAL ═══════════════ -->
+<section class="final-sec sec">
+  <div class="final-bg"></div>
+  <div class="final-ov"></div>
+  <div class="final-inner wrap">
+    <h2 class="reveal">Dentro de 30 días, una de estas dos cosas habrá ocurrido:</h2>
+    <div class="opts reveal">
+      <div class="opt opt-a">
+        <div class="opt-label">✓ OPCIÓN A</div>
+        <div class="opt-title">Elegiste actuar hoy</div>
+        <ul class="opt-list">
+          <li>30 investigaciones completadas</li>
+          <li>Tu hijo piensa bíblicamente</li>
+          <li>Conversaciones espirituales reales</li>
+          <li>Sientes que estás ganando</li>
+        </ul>
+      </div>
+      <div class="opt opt-b">
+        <div class="opt-label">✗ OPCIÓN B</div>
+        <div class="opt-title">Seguiste esperando</div>
+        <ul class="opt-list">
+          <li>Esperando el momento perfecto</li>
+          <li>La agenda siguió llena</li>
+          <li>El mundo lo formó en tu lugar</li>
+          <li>El precio se cobra después</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-bottom:28px;" class="reveal">
+      <p style="color:rgba(255,255,255,.5);font-size:16px;margin-bottom:4px">La Opción A cuesta <strong style="color:var(--gold-l)">$27 USD</strong> y 15 minutos al día.</p>
+      <p style="color:rgba(255,255,255,.32);font-size:14px;font-style:italic">La Opción B no cuesta nada hoy. Pero su precio se cobra después.</p>
+    </div>
+
+    <!-- ═══ HOTMART LINK — Reemplazar URL ═══ -->
+    <a href="https://pay.hotmart.com/XXXXXXXXXX" class="cta reveal"
+       onclick="fbq('track','InitiateCheckout')">
+      🔍 QUIERO LA OPCIÓN A PARA MI HIJO →
+    </a>
+    <!-- FIN HOTMART LINK -->
+
+    <div class="trust reveal">
+      <span><span>🔒</span> Pago seguro</span>
+      <span><span>⚡</span> Acceso inmediato</span>
+      <span><span>🛡️</span> Garantía 7 días</span>
+    </div>
+
+    <div class="final-close reveal">
+      <p class="final-quote">"La mayoría de los niños aprenden qué creer.<br>Muy pocos aprenden por qué creer.<br>Y esa diferencia puede determinar si mantendrán su fe cuando crezcan."</p>
+      <span class="final-cite">— Detective de Fe™</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Detective de Fe™ · Todos los derechos reservados</p>
+  <p style="margin-top:6px">Los testimonios reflejan experiencias individuales y los resultados pueden variar. Este producto complementa, no reemplaza, la enseñanza pastoral o eclesial.</p>
+</footer>
+
+<script>
+// ── SCROLL REVEAL ──
+const revEls = document.querySelectorAll('.reveal');
+const revObs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('on'), i * 50);
+      revObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.07, rootMargin: '0px 0px -30px 0px' });
+revEls.forEach(el => revObs.observe(el));
+
+// ── STICKY BAR ──
+const bar = document.getElementById('stickyBar');
+window.addEventListener('scroll', () => {
+  bar.classList.toggle('show', window.scrollY > window.innerHeight * 0.35);
+}, { passive: true });
+
+// ── FAQ ──
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+// ── LIVE COUNTER (simula visitas en tiempo real) ──
+const liveEl = document.getElementById('liveCount');
+if (liveEl) {
+  let count = 39 + Math.floor(Math.random() * 20);
+  liveEl.textContent = count;
+  setInterval(() => {
+    const delta = Math.random() > 0.5 ? 1 : -1;
+    count = Math.max(28, Math.min(72, count + delta));
+    liveEl.textContent = count;
+  }, 4000);
+}
+
+// ── PIXEL EVENTOS en botones ──
+// Los eventos fbq ya están en onclick de cada botón CTA
+// Purchase se dispara desde el thank you page de Hotmart
+</script>
+</body>
+</html>
